@@ -1,6 +1,9 @@
 # Trent Course Scraper
 
-This repo contains two Python scripts that scrape Trent University's Academic timetable (https://my.trentu.ca/portal/applications/timetable/public/landing.php) and undergraduate programs webpage (https://www.trentu.ca/futurestudents/undergraduate/programs). The scripts are made with Selenium WebDriver. Running each script outputs a .txt file that contains the respective information. 
+This repo contains two Python scripts that scrape [Trent University's Academic timetable](https://my.trentu.ca/portal/applications/timetable/public/landing.php) and [undergraduate programs webpage](https://www.trentu.ca/futurestudents/undergraduate/programs). The scripts are made with Selenium WebDriver. Running each script outputs a .txt file that contains the respective information. 
+
+### Downloading a chromedriver that is compatible with your computer
+The chromedriver installed in this repo is compatible with the mac-x64 platform. If your platform is different, delete the existing chromedriver and download a new chromedriver that fits your computer's platform from this [webpage](https://googlechromelabs.github.io/chrome-for-testing/). Documentation can be found [here](https://sites.google.com/chromium.org/driver/).
 
 ### Installing Selenium
 #### In the terminal run one of the following:
