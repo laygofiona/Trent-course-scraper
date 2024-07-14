@@ -203,7 +203,7 @@ def iterate_results_table(driver, courses_file, faculty_file):
 # Main function
 def main():
     # Setting up service and driver
-    service = Service(executable_path="/Users/fionalaygo/Desktop/course-scraper/chromedriver")
+    service = Service(executable_path="./chromedriver")
     driver = webdriver.Chrome(service=service)
 
     # Parse year argument
@@ -267,10 +267,7 @@ def main():
             iterate_results_table(driver, f, s)
             f.write(f"=====\n")
             
-
-
-    # to get faculty, create another document called faculty where you go through the last <td> in <tr> and make sure that it isn'y empty and it isn't to be announced soon
-    # in the document, specify the course code, and the faculty members in a list
+            
     s.close()
     f.close()
     driver.quit()
