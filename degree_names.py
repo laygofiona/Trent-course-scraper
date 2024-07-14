@@ -30,7 +30,7 @@ def write_program_names(programs, f):
         f.write(f"{program_name} \n")
 
 def main():
-    service = Service(executable_path="/Users/fionalaygo/Desktop/course-scraper/chromedriver")
+    service = Service(executable_path="./chromedriver")
     driver = webdriver.Chrome(service=service)
 
     # Set up file to write course names to
