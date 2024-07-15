@@ -105,7 +105,7 @@ def check_if_results_exist(driver, id):
         # Return false if it doesn't
         return False
 
-def iterate_results_table(driver, courses_file, faculty_file):
+def iterate_results_table(driver, courses_file, faculty_file, courses):
     tbody_id = "resultsBody"
     try:
         # wait until a <tbody> element with an id of resultsBody is visible
@@ -114,8 +114,6 @@ def iterate_results_table(driver, courses_file, faculty_file):
         results_body = driver.find_element(By.ID, tbody_id)
         # Get the rows within results_body
         rows = results_body.find_elements(By.TAG_NAME, "tr")
-        # Set up courses array to keep track of courses
-        courses = []
         # Set up faculty array to keep track of staff members
         faculty = []
 
@@ -240,6 +238,9 @@ def main():
 
     # Setting results table id
     results_table_id = "resultsTable"
+
+    # Set up courses array to keep track of courses
+    courses = []
     
     
     # iterate over subject_values array
@@ -264,7 +265,7 @@ def main():
             # write subject name to faculty.txt
             s.write(f"\n{subject}\n")
             f.write(f"=====\n")
-            iterate_results_table(driver, f, s)
+            iterate_results_table(driver, f, s, courses)
             f.write(f"=====\n")
             
             
