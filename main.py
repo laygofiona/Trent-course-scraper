@@ -176,15 +176,15 @@ def iterate_results_table(driver, courses_file, faculty_file, courses):
                                 lis = ul.find_elements(By.TAG_NAME, "li")
                                 for li in lis:
                                     # get each cross_listed course and write it to the file
-                                    # Remove any last two characters from the text
-                                    courses_file.write(f"{li.text[:-2]} ")
+                                    # Remove any last three characters from the text
+                                    courses_file.write(f"{li.text[:-3]} ")
 
                     # Find the course code
                     # course code is in the <th> element with a class of text-nowrap
                     head = row.find_element(By.CSS_SELECTOR, "th.text-nowrap")
                     # Write the course code text on the same line as the cross-listed courses line, separated by a space, if it isn't empty
-                    # Remove any last two characters from the text
-                    courses_file.write(f"{head.text[:-2]}\n")
+                    # Remove any last three characters from the text
+                    courses_file.write(f"{head.text[:-3]}\n")
         
 
             except (StaleElementReferenceException, TimeoutException, NoSuchElementException) as e:
